@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Form">
+  <meta name="keywords" content="html, css, javascript">
+  <meta name="author" content="Ana Clarissi">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./src/assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Contact form</title>
+
+  <link rel="stylesheet" href="./src/css/style.css">
+  
+</head>
+<body>
+
+  <main id="main">
+
+    <div class="container">
+
+      <h1 class="title">Contact Us</h1>
+
+      <form action="." id="contact-form" method="post">
+
+        <div class="row">
+
+          <div class="form-group">
+
+            <label for="first-name" class="label-required">First Name <span>*</span></label>
+
+            <input 
+              type="text" 
+              name="first-name" 
+              id="first-name" 
+              aria-describedby="first-name-error" 
+              aria-invalid="false" required
+            >
+            
+            <span 
+              id="first-name-error" 
+              class="error-message" 
+              role="alert" 
+              aria-live="assertive" 
+              hidden>
+              This field is required
+            </span>
+          </div>
+
+          <div class="form-group">
+
+            <label for="last-name" class="label-required">Last Name <span>*</span></label>
+
+            <input 
+              type="text" 
+              name="last-name" 
+              id="last-name" 
+              aria-describedby="last-name-error" 
+              aria-invalid="false" 
+              required>
+            
+            <span 
+              id="last-name-error" 
+              class="error-message" 
+              role="alert" 
+              aria-live="assertive" 
+              hidden>
+              This field is required
+            </span>
+          </div>
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="email" class="label-required">Email Address <span>*</span></label>
+
+          <input 
+            type="email" 
+            name="email" 
+            id="email" 
+            aria-describedby="email-error"
+            aria-invalid="false"
+            required
+          >
+
+          <span 
+            id="email-error"
+            class="error-message"
+            role="alert"
+            aria-live="assertive"
+            hidden>
+            Please enter a valid email address
+          </span>
+
+        </div>
+
+        <div class="query-options">
+
+          <label for="querys" class="label-required">Query Type <span>*</span></label>
+
+          <div class="row" id="querys">
+
+            <div class="form-group">
+
+              <label>
+                <input 
+                  type="radio" 
+                  name="query-group" 
+                  id="general-enquiry"
+                  aria-describedby="query-error"
+                  aria-invalid="false"
+                  required
+                >
+                <span>General Enquiry</span>
+              </label>
+
+            </div>
+
+            <div class="form-group">
+              
+              <label>
+                <input 
+                  type="radio" 
+                  name="query-group" 
+                  id="support-request"
+                  aria-describedby="query-error"
+                  aria-invalid="false"
+                  >
+                <span>Support Request</span>
+              </label>
+
+            </div>
+
+          </div>
+
+          <span 
+            id="query-error" 
+            class="error-message"
+            role="alert"
+            aria-live="assertive"
+            hidden>
+            Please select a query type
+          </span>
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="message" class="label-required">Message <span>*</span></label>
+
+          <textarea 
+            name="message" 
+            id="message"
+            aria-describedby="message-error"
+            aria-invalid="false"
+            rows="4"
+            required>
+          </textarea>
+
+          <span 
+            id="message-error"
+            class="error-message"
+            role="alert"
+            aria-live="assertive"
+            hidden>
+            This field is required
+          </span>
+
+        </div>
+
+        <div class="form-group">
+
+          <label class="consent-label">
+            <input 
+              type="checkbox" 
+              name="consent" 
+              id="consent"  
+              aria-describedby="consent-error"
+              aria-invalid="false"
+              required
+            >
+            <span>I consent to being contacted by the team</span>
+
+          </label>
+
+          <span 
+            id="consent-error"
+            class="error-message"
+            role="alert"
+            aria-live="assertive"
+            hidden>
+            To submit this form, please consent to being contacted
+          </span>
+
+        </div>
+
+        <button id="submit-btn" type="submit">Submit</button>
+        
+      </form>
+
+    </div>
+
+    <div id="message-sent-alert" hidden>
+      Message Sent!
+      Thanks for completing the form. We'll be in touch soon!
+    </div>
+
+  </main>
+  
+
+  <script src="./src/js/script.js"></script>
+
+</body>
+</html>
