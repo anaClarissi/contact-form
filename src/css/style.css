@@ -28,6 +28,7 @@
 
     --green-200: #dff1e7;
     --green-600: #0c7d69;
+    --green-900: #06463a;
     --eed: #d73c3c;
 
     --white: #ffffff;
@@ -62,7 +63,6 @@ body {
 
 #main {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -131,6 +131,7 @@ input[type="email"],
     border-radius: 8px;
     border: 1px solid var(--grey-500);
     cursor: pointer;
+    transition: all .2s ease-in-out;
 }
 
 input[type="text"],
@@ -143,6 +144,12 @@ input[type="text"]:focus,
 input[type="email"]:focus,
 #message:focus {
     outline: 1px solid var(--green-600);
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+#querys label:hover {
+    border-color: var(--green-600);
 }
 
 #querys label:has(input:checked) {
@@ -199,6 +206,7 @@ input[type="radio"]:checked::before {
     grid-template-columns: 1rem auto;
     column-gap: 1.15rem;
     line-height: 1.1;
+    cursor: pointer;
 }
 
 input[type="checkbox"] {
@@ -214,6 +222,7 @@ input[type="checkbox"] {
     height: 1.15rem;
     border-radius: 0.15rem;
     border: 0.15rem solid var(--grey-500);
+    cursor: pointer;
 }
 
 input[type="checkbox"]::before {
@@ -242,4 +251,31 @@ input[type="checkbox"]:checked::before {
     color: var(--green-200);
     background-color: var(--green-600);
     cursor: pointer;
+    transition: background-color .2s ease-in-out;
+}
+
+#submit-btn:hover {
+    background-color: var(--green-900);
+}
+
+
+
+@media (max-width: 768px) {
+
+    #main {
+        justify-content: flex-start;
+    }
+
+    #main .container {
+        width: auto;
+        height: auto;
+        max-width: none;
+        max-height: none;
+        padding: 1.5rem;
+    }
+    
+    .row {
+        flex-direction: column;
+    }
+
 }
