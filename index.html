@@ -35,7 +35,9 @@
               name="first-name" 
               id="first-name" 
               aria-describedby="first-name-error" 
-              aria-invalid="false" required
+              aria-invalid="false" 
+              autocomplete="given-name"
+              required
             >
             
             <span 
@@ -58,6 +60,7 @@
               id="last-name" 
               aria-describedby="last-name-error" 
               aria-invalid="false" 
+              autocomplete="family-name"
               required>
             
             <span 
@@ -82,6 +85,7 @@
             id="email" 
             aria-describedby="email-error"
             aria-invalid="false"
+            autocomplete="email"
             required
           >
 
@@ -98,7 +102,7 @@
 
         <div class="query-options">
 
-          <label for="querys" class="label-required">Query Type <span>*</span></label>
+          <label for="general-enquiry" class="label-required">Query Type <span>*</span></label>
 
           <div class="row" id="querys">
 

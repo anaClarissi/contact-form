@@ -260,11 +260,7 @@ input[type="checkbox"]:checked::before {
 
 
 
-@media (max-width: 768px) {
-
-    #main {
-        justify-content: flex-start;
-    }
+@media (max-width: 1024px) {
 
     #main .container {
         width: auto;
@@ -272,6 +268,16 @@ input[type="checkbox"]:checked::before {
         max-width: none;
         max-height: none;
         padding: 1.5rem;
+    }
+    
+}
+
+
+
+@media (max-width: 480px) {
+
+    #main {
+        justify-content: flex-start;
     }
     
     .row {
