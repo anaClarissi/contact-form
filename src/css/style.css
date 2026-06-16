@@ -277,6 +277,56 @@ input[type="checkbox"]:checked::before {
     outline-color: var(--red) !important;
 }
 
+#message-sent-alert {
+    position: fixed;
+    top: 2rem;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    color: var(--white);
+    background-color: var(--grey-900);
+    border-radius: 0.75rem;
+}
+
+#message-sent-alert.active {
+    display: flex;
+    animation: messageAnimation .2s linear;
+}
+
+#message-sent-alert h2 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+#message-sent-alert p {
+    font-size: 0.975rem;
+    color: var(--green-200);
+}
+
+@keyframes messageAnimation {
+    
+    from {
+
+        transform: translateX(100%);
+
+    }
+
+    to {
+
+        transform: translateX(0);
+
+    }
+
+}
+
+
 
 @media (max-width: 1024px) {
 
@@ -286,6 +336,10 @@ input[type="checkbox"]:checked::before {
         max-width: none;
         max-height: none;
         padding: 1.5rem;
+    }
+
+    #message-sent-alert {
+        top: 1rem;
     }
     
 }
@@ -300,6 +354,11 @@ input[type="checkbox"]:checked::before {
     
     .row {
         flex-direction: column;
+    }
+
+    #message-sent-alert {
+        left: 1rem;
+        right: 1rem;    
     }
 
 }

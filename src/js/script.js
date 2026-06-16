@@ -13,23 +13,33 @@ contactForm.addEventListener("submit", (event) => {
     const consent = document.querySelector("#consent");
 
 
-    checkTextsInput(textsFields);
+    const textsValid = checkTextsInput(textsFields);
 
-    checkEmail(email);
+    const emailValid = checkEmail(email);
 
-    checkQueryRadio(query);
+    const radioValid = checkQueryRadio(query);
 
-    checkCosentCheckBox(consent);
+    const consentValid = checkCosentCheckBox(consent);
+
+    if (textsValid && emailValid && radioValid && consentValid) {
+
+        showSuccessMessage();
+
+    }
 
 });
 
 function checkTextsInput (fields) {
+
+    let isValid = true;
 
     fields.forEach(field => {
 
         if (field.value.trim() === "") {
 
             showMErrorState(field);
+
+            isValid = false;
 
         } else {
 
@@ -38,6 +48,8 @@ function checkTextsInput (fields) {
         }
 
     });
+
+    return isValid;
 
 }
 
@@ -48,10 +60,14 @@ function checkEmail (email) {
     if (regex.test(email.value)) {
 
         removeErrorState(email);
+
+        return true;
         
     } else {
         
         showMErrorState(email);
+
+        return false;
 
     }
 
@@ -63,9 +79,13 @@ function checkQueryRadio (query) {
 
         shownQueryErrorState();
 
+        return false;
+
     } else {
 
         removeQueryErrorState();
+
+        return true;
 
     }
 
@@ -77,9 +97,13 @@ function checkCosentCheckBox (checkbox) {
 
         showMErrorState(checkbox);
 
+        return false;
+
     } else {
 
         removeErrorState(checkbox);
+
+        return true;
 
     }
 
@@ -131,5 +155,24 @@ function showMErrorState (element) {
     messageError.hidden = false;
 
     element.classList.add("error-state");
+
+}
+
+
+function showSuccessMessage() {
+
+    const successMessage = document.querySelector("#message-sent-alert");
+
+    successMessage.hidden = false;
+
+    successMessage.classList.add("active");
+
+    setTimeout(() => {
+        
+        successMessage.classList.remove("active");
+        
+        successMessage.hidden = true;
+
+    }, 3000);
 
 }
